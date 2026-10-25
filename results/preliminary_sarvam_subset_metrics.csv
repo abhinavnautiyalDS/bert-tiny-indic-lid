@@ -1,0 +1,3 @@
+model,rows,coverage,supported_prediction_accuracy,operational_accuracy,macro_f1,recorded_latency_p50,recorded_latency_p90,latency_unit_verified
+BERT-Tiny E4,3952,0.9868,0.9754,0.9626,0.9748,0.848,0.939,false
+Sarvam Language Identification,3952,0.9552,0.9502,0.9076,0.8774,666.945,3693.596,false
