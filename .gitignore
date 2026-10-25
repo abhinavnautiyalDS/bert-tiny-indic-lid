@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+*.log
+# Do not commit local evaluation dumps or raw private/call data by default
+local_data/
+private_data/
