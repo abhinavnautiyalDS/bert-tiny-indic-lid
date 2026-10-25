@@ -1,0 +1,11 @@
+# Pin exact versions after confirming the training/evaluation environment.
+torch
+transformers
+tokenizers
+safetensors
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+jupyter
