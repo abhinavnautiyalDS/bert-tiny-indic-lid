@@ -1,22 +1,49 @@
-# Model card: BERT-Tiny Indic LID
+---
+language: [hi, mr, bn, as, pa, gu, ta, te, kn, ml, en]
+license: other
+library_name: transformers
+pipeline_tag: text-classification
+tags: [language-identification, indic, bert, romanized, code-mixing]
+datasets: [YOUR_USERNAME/YOUR_DATASET]
+---
+# Indic Language ID - BERT-E4
 
-## Model overview
-A fine-tuned BERT-Tiny sequence classifier intended for text-based identification of Indian languages, including use in latency-sensitive voice-agent pipelines.
+A small BERT (4 layers) fine-tuned from scratch to identify the language a text is written in: Hindi, Marathi, Bengali, Assamese, Punjabi, Gujarati, Tamil, Telugu, Kannada, Malayalam, English (India), or `none` (any other language, script, or non-linguistic text). It handles native script, romanized (Latin-script) text and code-mixed text.
 
-## Intended use
-Language identification for text snippets and speech-recognition transcripts. Evaluate separately on short greetings, Romanized text, code-mixed utterances, ASR errors, names/entities, and unsupported languages before deployment.
+## Model details
+| | |
+|---|---|
+| Architecture | `BertForSequenceClassification`, 4 layers, hidden size 256, 4 heads, FFN 1024 |
+| Parameters | about 16.1M (12.8M of them in the embedding table) |
+| Vocabulary | 50,000 WordPiece, trained on the dataset's train split; lower-cased, accents kept |
+| Max positions | 256 (train with max_length 192 recommended) |
+| Weights | `model.safetensors`, float32, 64 MB |
+| Labels | 0 hi-IN, 1 mr-IN, 2 bn-IN, 3 as-IN, 4 pa-IN, 5 gu-IN, 6 ta-IN, 7 te-IN, 8 kn-IN, 9 ml-IN, 10 en-IN, 11 none |
 
-## Labels
-The current target label set is: as-IN, bn-IN, en-IN, gu-IN, hi-IN, kn-IN, ml-IN, mr-IN, none, pa-IN, ta-IN, te-IN. See the dataset card for exact label semantics.
+## Training data
+Indic Language ID v6 (see its dataset card): about 958k train rows, including romanized text in many spelling styles, Devanagari dialects and other languages as `none`, and noisy / multi-sentence / fragment variants.
 
-## Architecture and training
-To be completed from the actual checkpoint and training notebook: model configuration, tokenizer, number of parameters, training hyperparameters, dataset revision, seed, and compute environment.
+## Usage
+```python
+from transformers import pipeline
+clf = pipeline("text-classification", model="PATH_OR_HUB_ID", truncation=True, max_length=192)
+print(clf(["मुझे चाय पसंद है", "Aami bhat khai", "THIS IS ENGLISH!!!"]))
+```
+`tokenizer_config.json` does not set `model_max_length`, so always pass `truncation=True, max_length=192` (inputs over 256 tokens will otherwise fail).
 
-## Evaluation
-Add final held-out metrics, per-language results, confusion matrices, calibration/coverage analysis, and CPU p50/p90 latency after rerunning with a documented protocol.
+## Results
+Fill in after running the evaluation cell:
+| Test set | Accuracy | Macro-F1 |
+|---|---|---|
+| v6 test split | TODO | TODO |
+| v6 test, new rows only (`variant != orig`) | TODO | TODO |
+| Held-out 87k evaluation set | TODO | TODO |
 
 ## Limitations
-Do not assume high prepared-split scores imply real-world generalization. Audit duplicate/template leakage, short and ambiguous utterances, code-switching, transliteration, ASR noise, domain shift, and unsupported languages.
+* Trained largely on synthetic, rule-generated and language-model-written text without native-speaker review.
+* `none` is an open-set class learned from a limited set of languages, scripts and seeds; unseen languages may be mislabelled as a supported language.
+* Weak spots found in analysis: romanized Tamil, short (1-2 word) Hindi / Marathi inputs, and Hindi vs closely related Devanagari languages (Bhojpuri, Maithili, Nepali, Sanskrit).
+* Intended for language identification only, not for judging text quality or content.
 
-## Licensing and ethics
-Document the model/checkpoint license and all training-data source terms before release. Do not include private call transcripts or credentials.
+## License
+Set after verifying the licenses of the training data sources.
