@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="680" viewBox="0 0 1100 680">
+<rect width="1100" height="680" fill="#ffffff"/>
+<text x="40" y="42" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#172033">BERT-Tiny Indic LID — project snapshot</text>
+<text x="40" y="70" font-family="Arial,sans-serif" font-size="14" fill="#475569">Dataset composition and preliminary benchmark results; see README caveats before interpreting scores.</text>
+<rect x="35" y="95" width="500" height="255" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="60" y="128" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#172033">Dataset splits (rows)</text>
+<line x1="200" y1="160" x2="200" y2="305" stroke="#cbd5e1"/>
+<text x="60" y="185" font-family="Arial,sans-serif" font-size="15" fill="#334155">Train</text><rect x="200" y="166" width="275" height="24" rx="4" fill="#2563eb"/><text x="485" y="184" font-family="Arial,sans-serif" font-size="14" fill="#172033">958,026</text>
+<text x="60" y="230" font-family="Arial,sans-serif" font-size="15" fill="#334155">Validation</text><rect x="200" y="211" width="34.2" height="24" rx="4" fill="#0d9488"/><text x="245" y="229" font-family="Arial,sans-serif" font-size="14" fill="#172033">119,269</text>
+<text x="60" y="275" font-family="Arial,sans-serif" font-size="15" fill="#334155">Test</text><rect x="200" y="256" width="34.3" height="24" rx="4" fill="#7c3aed"/><text x="245" y="274" font-family="Arial,sans-serif" font-size="14" fill="#172033">119,500</text>
+<text x="60" y="325" font-family="Arial,sans-serif" font-size="14" fill="#475569">Total: 1,196,795 rows · 12 labels</text>
+<rect x="565" y="95" width="500" height="255" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="590" y="128" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#172033">Full-set comparison (%)</text>
+<text x="590" y="157" font-family="Arial,sans-serif" font-size="12" fill="#64748b">Accuracy among supported predictions / operational accuracy</text>
+<text x="590" y="193" font-family="Arial,sans-serif" font-size="14" fill="#334155">BERT-Tiny E4</text><rect x="735" y="176" width="220" height="16" rx="3" fill="#2563eb"/><rect x="735" y="196" width="217.7" height="12" rx="3" fill="#0d9488"/><text x="960" y="190" font-family="Arial,sans-serif" font-size="12" fill="#172033">97.76</text><text x="960" y="206" font-family="Arial,sans-serif" font-size="12" fill="#172033">96.75</text>
+<text x="590" y="242" font-family="Arial,sans-serif" font-size="14" fill="#334155">fast-langdetect</text><rect x="735" y="225" width="193.7" height="16" rx="3" fill="#2563eb"/><rect x="735" y="245" width="182.2" height="12" rx="3" fill="#0d9488"/><text x="935" y="239" font-family="Arial,sans-serif" font-size="12" fill="#172033">86.07</text><text x="925" y="255" font-family="Arial,sans-serif" font-size="12" fill="#172033">80.97</text>
+<text x="590" y="291" font-family="Arial,sans-serif" font-size="14" fill="#334155">MIRA-IndicLID</text><rect x="735" y="274" width="211.2" height="16" rx="3" fill="#2563eb"/><rect x="735" y="294" width="203.6" height="12" rx="3" fill="#0d9488"/><text x="952" y="288" font-family="Arial,sans-serif" font-size="12" fill="#172033">93.85</text><text x="945" y="304" font-family="Arial,sans-serif" font-size="12" fill="#172033">90.48</text>
+<rect x="60" y="370" width="16" height="12" rx="2" fill="#2563eb"/><text x="82" y="381" font-family="Arial,sans-serif" font-size="12" fill="#475569">Supported-prediction accuracy</text><rect x="280" y="370" width="16" height="12" rx="2" fill="#0d9488"/><text x="302" y="381" font-family="Arial,sans-serif" font-size="12" fill="#475569">Operational accuracy (unsupported = incorrect)</text>
+<rect x="35" y="410" width="1030" height="225" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="60" y="445" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#172033">Dataset train split: source types</text>
+<text x="60" y="475" font-family="Arial,sans-serif" font-size="14" fill="#334155">Natural</text><rect x="210" y="459" width="352" height="20" rx="4" fill="#2563eb"/><text x="575" y="474" font-family="Arial,sans-serif" font-size="14" fill="#172033">422,748 (44.1%)</text>
+<text x="60" y="512" font-family="Arial,sans-serif" font-size="14" fill="#334155">Synthetic</text><rect x="210" y="496" width="166" height="20" rx="4" fill="#0d9488"/><text x="390" y="511" font-family="Arial,sans-serif" font-size="14" fill="#172033">199,583 (20.8%)</text>
+<text x="60" y="549" font-family="Arial,sans-serif" font-size="14" fill="#334155">Augmented</text><rect x="210" y="533" width="165" height="20" rx="4" fill="#7c3aed"/><text x="389" y="548" font-family="Arial,sans-serif" font-size="14" fill="#172033">198,534 (20.7%)</text>
+<text x="60" y="586" font-family="Arial,sans-serif" font-size="14" fill="#334155">Machine-romanized</text><rect x="210" y="570" width="114" height="20" rx="4" fill="#d97706"/><text x="338" y="585" font-family="Arial,sans-serif" font-size="14" fill="#172033">137,161 (14.3%)</text>
+<text x="60" y="615" font-family="Arial,sans-serif" font-size="12" fill="#64748b">Benchmark values are preliminary and based on supplied prediction exports; not a production guarantee.</text>
+</svg>
