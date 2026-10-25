@@ -3,7 +3,6 @@
 Upload the selected fine-tuned checkpoint and its matching tokenizer here.
 
 Suggested layout:
-- bert-tiny-e2/ — config.json, model.safetensors or pytorch_model.bin, tokenizer files, label mapping.
 - bert-tiny-e4/ — config.json, model.safetensors or pytorch_model.bin, tokenizer files, label mapping.
 
 Before release:
